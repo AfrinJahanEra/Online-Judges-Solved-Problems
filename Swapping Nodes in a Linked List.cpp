@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+
+class Solution {
+public:
+    ListNode* swapNodes(ListNode* head, int k) {
+        int length = 0;
+        ListNode* current = head;
+
+     
+        while (current) {
+            length++;
+            current = current->next;
+        }
+
+    
+        ListNode* first = head;
+        for (int i = 1; i < k; i++) {
+            first = first->next;
+        }
+
+
+        ListNode* second = head;
+        for (int i = 1; i < length - k + 1; i++) {
+            second = second->next;
+        }
+
+      
+        int temp = first->val;
+        first->val = second->val;
+        second->val = temp;
+
+        return head;
+    }
+};
+
