@@ -13,23 +13,29 @@ struct ListNode
 class Solution {
 public:
     ListNode* deleteMiddle(ListNode* head) {
-  
-        if (!head->next) return nullptr;
+        if (!head->next) return nullptr; // If only one node, return empty list
 
-        ListNode* slow = head;
-        ListNode* fast = head;
-        ListNode* prev = nullptr;
-
-     
-        while (fast && fast->next) {
-            prev = slow;
-            slow = slow->next;
-            fast = fast->next->next;
+        // Step 1: Calculate size
+        int size = 0;
+        ListNode* temp = head;
+        while (temp) {
+            size++;
+            temp = temp->next;
         }
 
-      
-        prev->next = slow->next;
-        delete slow;
+        // Step 2: Middle index
+        int mid = size / 2; // 0-based index
+
+        // Step 3: Traverse to node before middle
+        temp = head;
+        for (int i = 0; i < mid - 1; i++) {
+            temp = temp->next;
+        }
+
+        // Step 4: Delete the middle node
+        ListNode* toDelete = temp->next;
+        temp->next = temp->next->next;
+        delete toDelete;
 
         return head;
     }
