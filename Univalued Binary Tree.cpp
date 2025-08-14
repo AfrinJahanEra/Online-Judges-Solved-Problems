@@ -11,23 +11,14 @@ struct TreeNode
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-#include <queue>
-
 class Solution {
 public:
     bool isUnivalTree(TreeNode* root) {
         if (!root) return true;
-        int val = root->val;
-        std::queue<TreeNode*> q;
-        q.push(root);
 
-        while (!q.empty()) {
-            TreeNode* node = q.front();
-            q.pop();
-            if (node->val != val) return false;
-            if (node->left) q.push(node->left);
-            if (node->right) q.push(node->right);
-        }
-        return true;
+        if (root->left && root->left->val != root->val) return false;
+        if (root->right && root->right->val != root->val) return false;
+
+        return isUnivalTree(root->left) && isUnivalTree(root->right);
     }
 };
