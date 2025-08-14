@@ -13,32 +13,36 @@ struct ListNode
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
+        if (!head) return nullptr;
 
-        ListNode* dummy = new ListNode(0);
-        dummy->next = head;
-
-        ListNode* first = dummy;
-        ListNode* second = dummy;
-
-    
-        for (int i = 0; i <= n; i++) {
-            first = first->next;
+        // Step 1: Calculate the size of the list
+        int size = 0;
+        ListNode* temp = head;
+        while (temp) {
+            size++;
+            temp = temp->next;
         }
 
-
-        while (first != nullptr) {
-            first = first->next;
-            second = second->next;
+        // Step 2: If we remove the first node
+        if (n == size) {
+            ListNode* toDelete = head;
+            head = head->next;
+            delete toDelete;
+            return head;
         }
 
+        // Step 3: Find (size - n - 1)-th node
+        int targetIndex = size - n - 1;
+        temp = head;
+        for (int i = 0; i < targetIndex; i++) {
+            temp = temp->next;
+        }
 
-        ListNode* temp = second->next;
-        second->next = second->next->next;
-        delete temp; 
+        // Step 4: Delete the next node
+        ListNode* toDelete = temp->next;
+        temp->next = temp->next->next;
+        delete toDelete;
 
-   
-        ListNode* newHead = dummy->next;
-        delete dummy;
-        return newHead;
+        return head;
     }
 };
