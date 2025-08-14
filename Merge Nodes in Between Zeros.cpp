@@ -13,24 +13,32 @@ struct ListNode
 class Solution {
 public:
     ListNode* mergeNodes(ListNode* head) {
-        ListNode* dummy = new ListNode(0);
-        ListNode* tail = dummy;
+        vector<int> sums; // store sums between zeros
+        int currentSum = 0;
 
-        int sum = 0;
-        head = head->next;
+        ListNode* temp = head;      // Step 1
+        temp = temp->next;          // Step 2: skip first zero
 
-        while (head) {
-            if (head->val == 0) {
-              
-                tail->next = new ListNode(sum);
-                tail = tail->next;
-                sum = 0; 
+        while (temp != nullptr) {   // Step 3
+            if (temp->val == 0) {
+                // end of one segment
+                sums.push_back(currentSum);
+                currentSum = 0;
             } else {
-                sum += head->val;
+                currentSum += temp->val;
             }
-            head = head->next;
+            temp = temp->next;
         }
 
-        return dummy->next;
+        // Build new linked list from sums[]
+        ListNode* newHead = new ListNode(sums[0]);
+        ListNode* current = newHead;
+
+        for (int i = 1; i < sums.size(); i++) {
+            current->next = new ListNode(sums[i]);
+            current = current->next;
+        }
+
+        return newHead;
     }
 };
