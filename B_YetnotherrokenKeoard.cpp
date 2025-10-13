@@ -1,39 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
-int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);
-    int t;
+int32_t main() {
+    int t; 
     cin>>t;
     while(t--){
-        string s;
-        cin>>s;
-        string r;
-        for(char c:s){
-            if(c=='b'){
-                int i=r.size()-1;
-                while(i>=0&&!(r[i]>='a'&&r[i]<='z')){
-                    i--;
-                }
-                if(i>=0){
-                    r.erase(i,1);
-                }
+        stack<int> sm,cp;
+        string str; 
+        cin>>str;
+        for(int i=0;i<str.size();i++){
+            if(str[i]>= 'A'&&str[i]<='Z'&&str[i]!='B'){ 
+                cp.push(i);
             }
-            else if(c=='B'){
-                int i=r.size()-1;
-                while(i >=0&&!(r[i]>='A'&&r[i]<='Z')){
-                    i--;
-                }
-                if(i>=0){
-                    r.erase(i,1);
-
-                }
+            if(str[i]>='a'&&str[i]<='z'&&str[i]!='b'){ 
+                sm.push(i);
             }
-            else{
-                r+=c;
+            if(str[i]=='B'&&!cp.empty()){
+                str[cp.top()]='0';
+                
+                cp.pop();
+            }
+            if(str[i]=='b'&&!sm.empty()){
+                str[sm.top()]='0';
+                sm.pop();
             }
         }
-        cout<<r<<"\n";
+        for(int i=0;i<str.size();i++){
+            if(str[i]!='B'&&str[i]!='b'&&str[i]!='0'){
+                cout<<str[i];
+            }
+        }
+        cout<<endl;
+
     }
     return 0;
 }

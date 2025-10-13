@@ -12,7 +12,7 @@ int main() {
         }
         deque<int> d;
         d.push_back(a[0]);
-        for(int i=1;i<n;i++){
+        for(int i= 1;i<n;i++){
             if(a[i]<d.front()){
                 d.push_front(a[i]);
             }else{
@@ -23,6 +23,7 @@ int main() {
             cout<<d[i]<<" ";
         }
         cout<<endl;
+        
     }
     return 0;
 }
