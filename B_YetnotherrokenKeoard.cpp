@@ -1,35 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
-int main() {
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
     int t;
     cin>>t;
     while(t--){
         string s;
         cin>>s;
-        vector<char> v;
+        string r;
         for(char c:s){
             if(c=='b'){
-                for(int i= v.size()-1;i>=0;i--){
-                    if(islower(v[i])){
-                        v.erase(v.begin()+i);
-                        break;
-                    }
+                int i=r.size()-1;
+                while(i>=0&&!(r[i]>='a'&&r[i]<='z')){
+                    i--;
                 }
-            }else if(c=='B'){
-                for(int i= v.size()-1;i>=0;i--){
-                    if(isupper(v[i])){
-                        v.erase(v.begin()+i);
-                        break;
-                    }
+                if(i>=0){
+                    r.erase(i,1);
                 }
-            }else{
-                v.push_back(c);
+            }
+            else if(c=='B'){
+                int i=r.size()-1;
+                while(i >=0&&!(r[i]>='A'&&r[i]<='Z')){
+                    i--;
+                }
+                if(i>=0){
+                    r.erase(i,1);
+
+                }
+            }
+            else{
+                r+=c;
             }
         }
-        for(char c:v){
-            cout<<c;
-        }
-        cout<<endl;
+        cout<<r<<"\n";
     }
     return 0;
 }
