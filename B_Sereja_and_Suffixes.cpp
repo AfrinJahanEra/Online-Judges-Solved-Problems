@@ -9,14 +9,16 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>a[i];
     }
+    set<int> s;
+    vector<int> d(n);
+    for(int i=n-1;i>=0;i--){
+        s.insert(a[i]);
+        d[i]=s.size();
+    }
     while(m--){
         int x;
         cin>>x;
-        set<int> s;
-        for(int i=x-1;i<n;i++){
-                s.insert(a[i]);
-        }
-        cout<<s.size()<<"\n";
+        cout<<d[x-1]<<"\n";
     }
     return 0;
 }
