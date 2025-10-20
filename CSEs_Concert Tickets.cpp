@@ -5,33 +5,22 @@ int main(){
     cin.tie(nullptr);
     int n,m;
     cin>>n>>m;
-    vector<int>v;
+    multiset<int>s;
     for(int i=0;i<n;i++){
         int x;
         cin>>x;
-        v.push_back(x);
+        s.insert(x);
     }
-    sort(v.begin(),v.end());
     for(int i=0;i<m;i++){
         int x;
         cin>>x;
-        int idx=-1;
-        int l=0;
-        int r=v.size()-1;
-        while(l<=r){
-            int mid=(l+r)/2;
-            if(v[mid]<=x){
-                idx=mid;
-                l=mid+1;
-            }else{
-                r=mid-1;
-            }
-        }
-        if(idx==-1){
+        auto it=s.upper_bound(x);
+        if(it==s.begin()){
             cout<<-1<<"\n";
         }else{
-            cout<<v[idx]<<"\n";
-            v.erase(v.begin()+idx);
+            it--;
+            cout<<*it<<"\n";
+            s.erase(it);
         }
     }
     return 0;
