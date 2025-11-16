@@ -2,7 +2,6 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-
 #define ll unsigned long long int
 
 int main()

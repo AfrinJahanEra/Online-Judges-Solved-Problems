@@ -7,8 +7,6 @@ int main() {
         for(int j=2;j*j<=i;j++){
             if(i%j==0){
 
-
-
                 flgp=0;
                 break;
             }

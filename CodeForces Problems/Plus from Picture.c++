@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 int main() {
     int rows, cols, i, j, posX = -1, posY = -1;
     cin >> rows >> cols;

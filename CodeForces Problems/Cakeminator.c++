@@ -3,6 +3,7 @@
 #define ll long long 
 using namespace std;
 
+
 int main() {
     int row, col;
     cin >> row >> col;

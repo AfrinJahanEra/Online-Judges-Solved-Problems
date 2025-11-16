@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+
 int main() {
     int size, count = 0;
     cin >> size;

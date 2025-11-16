@@ -4,7 +4,6 @@
 #define Era(i,n) for(int i=0;i<n;i++)
 #define Print_kor cout<<
 using namespace std;
-
 int main() {
     ll n;
     cin >> n;

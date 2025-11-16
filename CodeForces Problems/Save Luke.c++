@@ -2,6 +2,7 @@
 #define ll long long
 using namespace std;
 
+
 int main(){
         ll int i,j,k;
         double d,l,v1,v2,x;

@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 const int MAX_SIZE = 1000000;
 int arr[MAX_SIZE];
 

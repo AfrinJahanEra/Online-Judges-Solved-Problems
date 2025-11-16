@@ -2,7 +2,6 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-
 const int M = 200000;
 
 vector<vector<int>> divisors;

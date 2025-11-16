@@ -1,35 +1,34 @@
 #include <iostream>
-
 using namespace std;
 
 int main()
 {
-    int n, k, food_quality, time_required, max_happiness, happiness;
-    cin >> n >> k >> food_quality >> time_required;
-    if (time_required > k)
+    int n, k, f, t, m, h;
+    cin >> n >> k >> f >> t;
+    if (t > k)
     {
-        max_happiness = food_quality - (time_required - k);
+        m = f - (t - k);
     }
     else
     {
-        max_happiness = food_quality;
+        m = f;
     }
     while (--n)
     {
-        cin >> food_quality >> time_required;
-        if (time_required > k)
+        cin >> f >> t;
+        if (t > k)
         {
-            happiness = food_quality - (time_required - k);
+            h = f - (t - k);
         }
         else
         {
-            happiness = food_quality;
+            h = f;
         }
-        if (happiness > max_happiness)
+        if (h > m)
         {
-            max_happiness = happiness;
+            m = h;
         }
     }
-    cout << max_happiness << endl;
+    cout << m << endl;
     return 0;
 }

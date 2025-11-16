@@ -2,7 +2,6 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-
 const int BIG = 300000;
 
 int main() {

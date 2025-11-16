@@ -46,6 +46,7 @@ int main(){
             mp.erase(idx);
         }
     }
+    
     cout<<"\n";
     return 0;
 }

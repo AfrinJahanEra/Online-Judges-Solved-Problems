@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-
 int main() {
     int n, x=0, y=0;
     cin >> n;
