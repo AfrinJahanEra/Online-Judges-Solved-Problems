@@ -5,7 +5,6 @@ int main() {
     int a[100];
     int b, c, n, m;
     char s[50];
-    
     cin >> n;
 
     int flag = 0;
