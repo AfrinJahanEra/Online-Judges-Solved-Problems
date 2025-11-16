@@ -11,7 +11,6 @@ int main() {
     for (long long i = 0; i < n; i++) {
         cin >> a[i];
     }
-
     string s;
     cin >> s;
 

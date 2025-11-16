@@ -27,9 +27,7 @@ A curated collection of solved algorithm and data structure problems from popula
 - **Codeforces** – https://codeforces.com  
 - **LeetCode** – https://leetcode.com  
 - **CodeChef** – https://www.codechef.com  
-- **AtCoder** – https://atcoder.jp  
 - **CSES** – https://cses.fi  
-- **Kattis** – https://open.kattis.com  
 
 
 ## 💡 Contribution
