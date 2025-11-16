@@ -1,6 +1,7 @@
 #include <iostream>
 #define l long
 using namespace std;
+
 int main() {
     l int t;
     cin >> t;
