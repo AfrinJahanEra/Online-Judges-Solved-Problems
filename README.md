@@ -1,4 +1,4 @@
-# Online Judges Solved Problems Repository
+# Online Judges Solved Problems 
 
 A curated collection of solved algorithm and data structure problems from popular online judges including **Codeforces, LeetCode, CodeChef, AtCoder, CSES, and Kattis**. This repository serves as a reference and learning resource for competitive programming enthusiasts.
 
